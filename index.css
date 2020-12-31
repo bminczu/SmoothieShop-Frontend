@@ -1,0 +1,174 @@
+/*-----  CSS RESET  ------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth; /* this enables smooth scrolling between internal links */
+  }
+
+  img {
+    max-width: 100%; /* this ensures images never break their container */
+    height: auto;
+  }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+  }
+
+   /* this overrides the default padding and margin on gridlex elements */
+  [class*=grid] {   margin: 0;  }
+  [class*=col]  {   padding: 0; }
+
+
+  /* ------------- Utility Classes --------------  */
+
+  .left     {  text-align: left;     }
+  .right    {  text-align: right;    }
+  .centered {  text-align: center;   }
+
+  .padded   {  padding: 5%;    }
+  .padded-1 {  padding: 1rem;  }
+  .padded-2 {  padding: 2rem;  }
+
+  .capped-width { width: 80%; margin: auto;}
+
+  .tall-50  {  min-height: 50vh;   }
+  .tall-100 {  min-height: 100vh;  }
+
+  .dark-bg      {  background-color: rgb(90, 90, 95);     }
+  .light-bg     {  background-color: #fff4ea;  }
+  .featured-bg  {  background-color: #ffdfc3;       }
+
+  .light-text   { color: white; }
+  .flex-flip:nth-child(2n){  flex-direction: row-reverse; }
+
+  /* General typography */
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    font-family: 'Megrim', cursive;
+  }
+  h1  { font-size: 5rem;    }
+  h2  { font-size: 2.2rem;  }
+  h3  { font-size: 1.8rem;  }
+  h4  { font-size: 1.4rem;  }
+  p   { font-size: 1rem;  }
+
+  p, ul {
+     margin-bottom: 0.8rem;
+  }
+  /* ------- unique typography styles - adjust to suit your styles  --------- */
+
+  .not-bold   { font-weight: normal; } /* add this class to make headings not bold */
+  .no-bullets { list-style:none; } /* Used to remove dot-points from a list */
+
+  .big-bold {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  p.emphasis {   /* typically added to paragraphs to make them a little bigger, could be a different font or color also */
+    font-size: 1.2rem;
+  }
+    /* ---------------  Button Styles  --------- */
+  /* We have created lots of different button styles, you probably don't need to have quite this many styles depending on your site */
+
+  .button,
+  .button-solid,
+  .button-inverted {
+    text-decoration: none;
+    color: #e67e22;
+    border: 2px solid;
+    padding: 0.6rem 2rem;
+    margin-top: 1rem;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .button:hover {
+    color:  #BAFFFC;
+  }
+
+  .button.inverted {   /* this is for a button on a dark background */
+    border: 2px solid white;
+    color: white;
+  }
+
+  .button.inverted:hover {
+    color: #e67e22;
+    border-color: #e67e22;
+  }
+
+  .button-solid {
+    background-color: #e67e22;
+    border-color: #e67e22;
+    color: white;
+  }
+
+  .button-solid:hover {
+    background-color: rgb(60, 60, 60);
+    border-color: rgb(60, 60, 60);
+  }
+
+  .arrow { /* this is the arrow button */
+    font-size: 1.5rem;
+    display: inline-block;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.5rem;
+    min-width: 2.5rem;
+    border: 1px solid #e67e22;
+    padding: 0.5rem;
+    border-radius: 100%;
+    text-decoration: none;
+    color: #e67e22;
+    margin-top: 0.5rem;
+  }
+
+    .arrow:hover {
+      color: rgb(60, 60, 60);
+      border-color: rgb(60, 60, 60);
+    }
+
+
+  /* Headers and footers */
+
+  header {
+    padding: 2% 5%;
+    background-color: #f2dee2;
+  }
+
+  header a,
+  footer a,
+  nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  header nav a,
+  .inline a {
+    display: inline-block;
+    padding: 0.5rem;
+  }
+  nav a:hover {
+    color: #72C4C0;
+  }
+
+  /* HERO IMAGE */
+
+  .banner {
+    background-image: url('images/45.svg');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: bottom;
+    min-height: 80vh;
+    background-color: #f2dee2;
+  }
