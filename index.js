@@ -28,7 +28,11 @@ function showIngredient(ingredientData){
     const smoothieDiv = document.querySelector(".smoothies")
     const header = document.createElement("h1")
     header.innerText = ingredientData.name
-    smoothieDiv.append(header)
+    const image = document.createElement("img")
+    image.src = ingredientData.image
+
+    smoothieDiv.append(header, image)
+    
     
 }
 
@@ -37,7 +41,7 @@ function showIngredient(ingredientData){
 
 function showSmoothie(smoothieData){
    //console.log(smoothieData)
-    const preMadeSmoothieDiv = document.querySelector(".house-favorties")
+    const preMadeSmoothieDiv = document.querySelector(".house-favorites")
     const header = document.createElement("h1")
     header.innerText = smoothieData.name
     preMadeSmoothieDiv.append(header)
