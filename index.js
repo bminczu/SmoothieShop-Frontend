@@ -28,7 +28,11 @@ function showIngredient(ingredientData){
     const smoothieDiv = document.querySelector(".smoothies")
     const header = document.createElement("h1")
     header.innerText = ingredientData.name
-    smoothieDiv.append(header)
+    const image = document.createElement("img")
+    image.src = ingredientData.image
+
+    smoothieDiv.append(header, image)
+    
     
 }
 
