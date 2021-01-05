@@ -29,8 +29,8 @@ function showIngredient(ingredientData){
     const header = document.createElement("h1")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
-    image.src = ingredientData.image
-
+    image.src = ingredientData.photo
+    console.log(ingredientData)
     smoothieDiv.append(header, image)
     
     
@@ -41,7 +41,7 @@ function showIngredient(ingredientData){
 
 function showSmoothie(smoothieData){
    //console.log(smoothieData)
-    const preMadeSmoothieDiv = document.querySelector(".house-favorties")
+    const preMadeSmoothieDiv = document.querySelector(".house-favorites")
     const header = document.createElement("h1")
     header.innerText = smoothieData.name
     preMadeSmoothieDiv.append(header)
@@ -50,3 +50,24 @@ function showSmoothie(smoothieData){
 
 
 }
+///// CUSTOMER/SMOOTHIE NAME FORM //////
+// form.addEventListener("submit", event=> {
+//     event.preventDefault()
+//     let input = event.target[0].value
+//     let commentLI = document.querySelector("li")
+//     commentLI.textContent = input
+//     let commentUL = document.querySelector(".comments")
+//     commentUL.append(commentLI)
+
+//     let likeSpan = document.querySelector("span")
+//     let postId = parseInt(likeSpan.dataset.id, 10) 
+   
+//     fetch("http://localhost:3000/comments", {
+//         method: "POST",
+//         headers: {"Content-Type": "application/json"},
+//         body: JSON.stringify({
+//             imageId: postId, content: input
+//         })
+//     })
+   
+// })
