@@ -31,35 +31,28 @@ function showIngredient(ingredientData){
     const image = document.createElement("img")
     image.src = ingredientData.photo
     smoothieDiv.append(header, image)
-    
-    
 }
 
 
 
-
-// function favSmoothie(smoothieData){
-//    if (smoothieData.favorite = true){
-//     const favSmoothieDiv = document.querySelector(".house-favorites")
-//     const header = document.createElement("p")
-//     header.innerText = smoothieData.name
-//     favSmoothieDiv.append(header)
-// }
+////// FAVORITE SMOOTHIES ///////
 function showSmoothie(smoothieData){
-    //console.log(smoothieData)
     if(smoothieData.favorite = true){
-
-    
      const preMadeSmoothieDiv = document.querySelector(".house-favorites")
      const header = document.createElement("p")
      header.innerText = smoothieData.name
      preMadeSmoothieDiv.append(header)
  }}
+
+
 ///// CUSTOMER/SMOOTHIE NAME FORM //////
 nameForm.addEventListener("submit", event => {
     event.preventDefault()
     let userName = event.target[0].value
     let smoothieName = event.target[1].value
+    document.querySelector(".name-form").reset();
+    ///nameForm.dataset.id =  smoothieData.id
+
 fetch("http://localhost:3000/smoothies", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -70,8 +63,23 @@ fetch("http://localhost:3000/smoothies", {
         }})
     })
 })
-    
 
 
+
+
+    //////// SIZE BUTTONS ///////
+let smallButton = document.querySelector(".small-box")
+smallButton.addEventListener("click", event => {
+event.preventDefault()
+console.log(event.target)
+
+// fetch(`http://localhost:3000/smoothies/${dancerID}`,{
+//         method: "PATCH",
+//         headers: {"Content-Type": "application/json"},
+//         body: JSON.stringify({
+//             likes: likeCount
+//         })
+//     })
+})
 
 
