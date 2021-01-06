@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
     fetchIngredients()
-    fetchPreMadeSmoothies()
+    fetchFavSmoothies()
 })
-
+let nameForm = document.querySelector(".name-form")
 
 ////// DATA FETCHES //////
 function fetchIngredients(){
@@ -13,7 +13,7 @@ function fetchIngredients(){
     })
 }
                 
-function fetchPreMadeSmoothies(){
+function fetchFavSmoothies(){
     fetch("http://localhost:3000/smoothies")
     .then(response => response.json())
     .then(smoothies => {
@@ -30,41 +30,56 @@ function showIngredient(ingredientData){
     header.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
-    console.log(ingredientData)
     smoothieDiv.append(header, image)
-    
-    
 }
 
 
 
-
+////// FAVORITE SMOOTHIES ///////
 function showSmoothie(smoothieData){
-   //console.log(smoothieData)
-    const preMadeSmoothieDiv = document.querySelector(".house-favorites")
-    const header = document.createElement("p")
-    header.innerText = smoothieData.name
-    preMadeSmoothieDiv.append(header)
+    if(smoothieData.favorite = true){
+     const preMadeSmoothieDiv = document.querySelector(".house-favorites")
+     const header = document.createElement("p")
+     header.innerText = smoothieData.name
+     preMadeSmoothieDiv.append(header)
+ }}
 
-}
+
 ///// CUSTOMER/SMOOTHIE NAME FORM //////
-// form.addEventListener("submit", event=> {
-//     event.preventDefault()
-//     let input = event.target[0].value
-//     let commentLI = document.querySelector("li")
-//     commentLI.textContent = input
-//     let commentUL = document.querySelector(".comments")
-//     commentUL.append(commentLI)
+nameForm.addEventListener("submit", event => {
+    event.preventDefault()
+    let userName = event.target[0].value
+    let smoothieName = event.target[1].value
+    document.querySelector(".name-form").reset();
+    ///nameForm.dataset.id =  smoothieData.id
 
-//     let likeSpan = document.querySelector("span")
-//     let postId = parseInt(likeSpan.dataset.id, 10) 
-   
-//     fetch("http://localhost:3000/comments", {
-//         method: "POST",
+fetch("http://localhost:3000/smoothies", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            
+        smoothie:{
+            name: smoothieName, username: userName
+        }})
+    })
+})
+
+
+
+
+    //////// SIZE BUTTONS ///////
+let smallButton = document.querySelector(".small-box")
+smallButton.addEventListener("click", event => {
+event.preventDefault()
+console.log(event.target)
+
+// fetch(`http://localhost:3000/smoothies/${dancerID}`,{
+//         method: "PATCH",
 //         headers: {"Content-Type": "application/json"},
 //         body: JSON.stringify({
-//             imageId: postId, content: input
+//             likes: likeCount
 //         })
 //     })
-   
-// })
+})
+
+
