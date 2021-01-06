@@ -23,25 +23,13 @@
 
   <body>
 
-<!-- NAV BAR -->
-<!-- <header class="centered">
-  <a href="/">
-    <h1 class="logo padded-1"> Bali Bowls </h1>
-  </a>
-  <nav>
-    <a href="#"> About </a>
-    <a href="#"> Favorites </a>
-    <a href="#"> Order </a>
-    <a href="#"> Reviews </a>
-  </nav>
-</header> -->
 
-<!-- HERO BANNER -->
 <section class="banner grid-center">
-  <div class="col-6-middle centered hero">
+<!---------- LANDING PAGE ---------->
+    <div class="col-6-middle centered hero">
     <h1> Bali Bowls </h1>
     <h2 class="not-bold"> A taste of paradise </h2>
-    <a href="#" class="button "> Make My Smoothie Bowl </a>
+    <a href="#start" class="button "> Order My Smoothie Bowl </a>
   </div>
 </section>
 <section> 
@@ -64,12 +52,69 @@
 </form></section>
 
 
-<h1>House Favorites</h1>
-  <br>
-  <div class="house-favorites"></div>
-  
-    <div class="smoothies"></div>
+<!---------- FAVORITES ---------->
+<section index="start" class= "banner">
+    <div class="col-6 centered hero">
+        <h2> Choose A House Favorite </h2>
+    </div>
+    <div class="house-favorites col-6-middle centered">
+    </div>
+    <div class="centered">
+        <a href="#" class="button"> Make My Own </a>
+    </div>
+</section>
 
+<!---------- SIZE ---------->
+<section class="banner col-6-middle centered hero">
+    <h2> Choose A Size </h2>
+
+    <div class="grid padded-1">
+  
+      <div class="col-4_sm-12 padded-1">
+        <a href="#" class="clickable-box bg-image small-box">
+          <div class="overlay padded light-text">
+            <h3> Small </h3>
+          </div>
+        </a>
+      </div>
+  
+      <div class="col-4_sm-12 padded-1">
+        <a href="#" class="clickable-box bg-image medium-box">
+          <div class="overlay padded light-text">
+            <h3> Medium </h3>
+          </div>
+        </a>
+      </div>
+  
+      <div class="col-4_sm-12 padded-1">
+        <a href="#" class="clickable-box bg-image large-box">
+          <div class="overlay padded light-text">
+            <h3> Large </h3>
+          </div>
+        </a>
+      </div>
+  
+    </div>
+  
+  </section>
+
+
+<!---------- MAKE YOUR OWN ---------->
+<section class= "banner" index="make">
+    <div class="col-6 centered hero">
+        <h2> Choose Your Ingredients </h2>
+    </div>
+    <div class="smoothies col-6-middle centered"></div>
+</section>
+
+<!---------- THANK YOU ---------->
+<section class= "banner grid-center" index="make">
+    <div class="col-6-middle centered hero">
+        <h2> Thank you! </h2>
+        <h3> Your smoothie will be ready in 5-10 minutes </h3>
+    </div>
+
+<!--  -->
    
     <script defer type="text/javascript" src="index.js"></script>
   </body>

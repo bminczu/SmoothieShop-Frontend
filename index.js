@@ -17,7 +17,7 @@ function fetchFavSmoothies(){
     fetch("http://localhost:3000/smoothies")
     .then(response => response.json())
     .then(smoothies => {
-        smoothies.forEach(smoothie => FavSmoothie(smoothie))
+        smoothies.forEach(smoothie => showSmoothie(smoothie))
     })
 }
 
@@ -26,7 +26,7 @@ function fetchFavSmoothies(){
 /////// "SHOW" FUNCTIONS
 function showIngredient(ingredientData){
     const smoothieDiv = document.querySelector(".smoothies")
-    const header = document.createElement("h1")
+    const header = document.createElement("p")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
@@ -38,19 +38,23 @@ function showIngredient(ingredientData){
 
 
 
-function FavSmoothie(smoothieData){
-   //console.log(smoothieData)
-   if (smoothieData.favorite = true){
-    const preMadeSmoothieDiv = document.querySelector(".house-favorites")
-    const header = document.createElement("h1")
-    header.innerText = smoothieData.name
+// function favSmoothie(smoothieData){
+//    if (smoothieData.favorite = true){
+//     const favSmoothieDiv = document.querySelector(".house-favorites")
+//     const header = document.createElement("p")
+//     header.innerText = smoothieData.name
+//     favSmoothieDiv.append(header)
+// }
+function showSmoothie(smoothieData){
+    //console.log(smoothieData)
+    if(smoothieData.favorite = true){
 
-    preMadeSmoothieDiv.append(header)
-   
-     }}
-
-
-
+    
+     const preMadeSmoothieDiv = document.querySelector(".house-favorites")
+     const header = document.createElement("p")
+     header.innerText = smoothieData.name
+     preMadeSmoothieDiv.append(header)
+ }}
 ///// CUSTOMER/SMOOTHIE NAME FORM //////
 nameForm.addEventListener("submit", event => {
     event.preventDefault()
