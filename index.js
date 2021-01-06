@@ -26,7 +26,7 @@ function fetchPreMadeSmoothies(){
 /////// "SHOW" FUNCTIONS
 function showIngredient(ingredientData){
     const smoothieDiv = document.querySelector(".smoothies")
-    const header = document.createElement("h1")
+    const header = document.createElement("p")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
@@ -42,12 +42,9 @@ function showIngredient(ingredientData){
 function showSmoothie(smoothieData){
    //console.log(smoothieData)
     const preMadeSmoothieDiv = document.querySelector(".house-favorites")
-    const header = document.createElement("h1")
+    const header = document.createElement("p")
     header.innerText = smoothieData.name
     preMadeSmoothieDiv.append(header)
-
-
-
 
 }
 ///// CUSTOMER/SMOOTHIE NAME FORM //////
