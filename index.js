@@ -25,9 +25,6 @@ function fetchFavSmoothies(){
 
 /////// "SHOW" FUNCTIONS
 function showIngredient(ingredientData){
-    //// BASE///
-    if (ingredientData.category == "base"){
-        const baseDiv = document.querySelector(".base")
     const header = document.createElement("p")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
@@ -64,7 +61,23 @@ function showIngredient(ingredientData){
 
 }
 
+function showIngredient(ingredientData){
+    const smoothieDiv = document.querySelector(".toppings")
+    const header = document.createElement("p")
+    header.innerText = ingredientData.name
+    const image = document.createElement("img")
+    image.src = ingredientData.photo
+    smoothieDiv.append(header, image)
+}
 
+// function showIngredient(ingredientData){
+//     const smoothieDiv = document.querySelector(".smoothies")
+//     const header = document.createElement("p")
+//     header.innerText = ingredientData.name
+//     const image = document.createElement("img")
+//     image.src = ingredientData.photo
+//     smoothieDiv.append(header, image)
+// }
 
 ////// FAVORITE SMOOTHIES ///////
 function showSmoothie(smoothieData){
@@ -101,18 +114,9 @@ fetch("http://localhost:3000/smoothies", {
 
 
     //////// SIZE BUTTONS ///////
-let smallButton = document.querySelector(".small-box")
-smallButton.addEventListener("click", event => {
-event.preventDefault()
-console.log(event.target)
-
-// fetch(`http://localhost:3000/smoothies/${dancerID}`,{
-//         method: "PATCH",
-//         headers: {"Content-Type": "application/json"},
-//         body: JSON.stringify({
-//             likes: likeCount
-//         })
-//     })
-})
-
+// let smallButton = document.querySelector(".small-box")
+// smallButton.addEventListener("click", event => {
+// event.preventDefault()
+// }
+// 
 
