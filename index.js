@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
     fetchIngredients()
-    fetchPreMadeSmoothies()
+    fetchFavSmoothies()
 })
-
+let nameForm = document.querySelector(".name-form")
 
 ////// DATA FETCHES //////
 function fetchIngredients(){
@@ -13,7 +13,7 @@ function fetchIngredients(){
     })
 }
                 
-function fetchPreMadeSmoothies(){
+function fetchFavSmoothies(){
     fetch("http://localhost:3000/smoothies")
     .then(response => response.json())
     .then(smoothies => {
@@ -25,25 +25,78 @@ function fetchPreMadeSmoothies(){
 
 /////// "SHOW" FUNCTIONS
 function showIngredient(ingredientData){
-    const smoothieDiv = document.querySelector(".smoothies")
+    if(ingredientData.category == "base"){
+    const baseDiv = document.querySelector(".base")
     const header = document.createElement("p")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
-    console.log(ingredientData)
-    smoothieDiv.append(header, image)
-    
-    
-}
+    baseDiv.append(header, image)
+}}
 
-
-
-
-function showSmoothie(smoothieData){
-   //console.log(smoothieData)
-    const preMadeSmoothieDiv = document.querySelector(".house-favorites")
+function showIngredient(ingredientData){
+    const smoothieDiv = document.querySelector(".plants")
     const header = document.createElement("p")
-    header.innerText = smoothieData.name
-    preMadeSmoothieDiv.append(header)
-
+    header.innerText = ingredientData.name
+    const image = document.createElement("img")
+    image.src = ingredientData.photo
+    smoothieDiv.append(header, image)
 }
+
+function showIngredient(ingredientData){
+    const smoothieDiv = document.querySelector(".toppings")
+    const header = document.createElement("p")
+    header.innerText = ingredientData.name
+    const image = document.createElement("img")
+    image.src = ingredientData.photo
+    smoothieDiv.append(header, image)
+}
+
+// function showIngredient(ingredientData){
+//     const smoothieDiv = document.querySelector(".smoothies")
+//     const header = document.createElement("p")
+//     header.innerText = ingredientData.name
+//     const image = document.createElement("img")
+//     image.src = ingredientData.photo
+//     smoothieDiv.append(header, image)
+// }
+
+////// FAVORITE SMOOTHIES ///////
+function showSmoothie(smoothieData){
+    if(smoothieData.favorite = true){
+     const preMadeSmoothieDiv = document.querySelector(".house-favorites")
+     const header = document.createElement("p")
+     header.innerText = smoothieData.name
+     preMadeSmoothieDiv.append(header)
+ }}
+
+
+///// CUSTOMER/SMOOTHIE NAME FORM //////
+nameForm.addEventListener("submit", event => {
+    event.preventDefault()
+    let userName = event.target[0].value
+    let smoothieName = event.target[1].value
+    document.querySelector(".name-form").reset();
+    ///nameForm.dataset.id =  smoothieData.id
+
+fetch("http://localhost:3000/smoothies", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            
+        smoothie:{
+            name: smoothieName, username: userName
+        }})
+    })
+})
+
+
+
+
+    //////// SIZE BUTTONS ///////
+// let smallButton = document.querySelector(".small-box")
+// smallButton.addEventListener("click", event => {
+// event.preventDefault()
+// }
+// 
+
