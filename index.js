@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function(){
     fetchFavSmoothies()
 })
 let nameForm = document.querySelector(".name-form")
-
 ////// DATA FETCHES //////
 function fetchIngredients(){
     fetch("http://localhost:3000/ingredients")
@@ -20,19 +19,17 @@ function fetchFavSmoothies(){
         smoothies.forEach(smoothie => showSmoothie(smoothie))
     })
 }
-
-
-
 /////// "SHOW" FUNCTIONS
 function showIngredient(ingredientData){
+    //// BASE///
+    if (ingredientData.category == "base"){
+        const baseDiv = document.querySelector(".base")
     const header = document.createElement("p")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
     baseDiv.append(header, image)
     }
-
-
     ///// PLANT //////
     if (ingredientData.category == "plant"){
     const plantDiv = document.querySelector(".plant")
@@ -42,7 +39,6 @@ function showIngredient(ingredientData){
     image.src = ingredientData.photo
     plantDiv.append(plantHeader, image)
     }
-
         /////// TOPPINGS //////
     if (ingredientData.category == "toppings"){
     
@@ -53,32 +49,7 @@ function showIngredient(ingredientData){
         image.src = ingredientData.photo
         toppingsDiv.append(toppingsHeader, image)
     }
-
-
-
-
-
-
 }
-
-function showIngredient(ingredientData){
-    const smoothieDiv = document.querySelector(".toppings")
-    const header = document.createElement("p")
-    header.innerText = ingredientData.name
-    const image = document.createElement("img")
-    image.src = ingredientData.photo
-    smoothieDiv.append(header, image)
-}
-
-// function showIngredient(ingredientData){
-//     const smoothieDiv = document.querySelector(".smoothies")
-//     const header = document.createElement("p")
-//     header.innerText = ingredientData.name
-//     const image = document.createElement("img")
-//     image.src = ingredientData.photo
-//     smoothieDiv.append(header, image)
-// }
-
 ////// FAVORITE SMOOTHIES ///////
 function showSmoothie(smoothieData){
     if(smoothieData.favorite == true){
@@ -89,8 +60,6 @@ function showSmoothie(smoothieData){
  }
  else {nill}} //// IMAGES DISPLAYED BREAK WHEN THIS IS DELETED. WHEN ACTIVE, 
  /// BACKGROUND SIZING CHANGES..///
-
-
 ///// CUSTOMER/SMOOTHIE NAME FORM //////
 nameForm.addEventListener("submit", event => {
     event.preventDefault()
@@ -98,7 +67,6 @@ nameForm.addEventListener("submit", event => {
     let smoothieName = event.target[1].value
     document.querySelector(".name-form").reset();
     ///nameForm.dataset.id =  smoothieData.id
-
 fetch("http://localhost:3000/smoothies", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -109,14 +77,16 @@ fetch("http://localhost:3000/smoothies", {
         }})
     })
 })
-
-
-
-
     //////// SIZE BUTTONS ///////
-// let smallButton = document.querySelector(".small-box")
-// smallButton.addEventListener("click", event => {
-// event.preventDefault()
-// }
-// 
-
+let smallButton = document.querySelector(".small-box")
+smallButton.addEventListener("click", event => {
+event.preventDefault()
+console.log(event.target)
+// fetch(`http://localhost:3000/smoothies/${dancerID}`,{
+//         method: "PATCH",
+//         headers: {"Content-Type": "application/json"},
+//         body: JSON.stringify({
+//             likes: likeCount
+//         })
+//     })
+})
