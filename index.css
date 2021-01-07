@@ -221,4 +221,6 @@
     background-repeat: no-repeat;
   }
 
-  
+  div.ingredient-event {                    /* this will hide all divs on the page */
+    display:none;
+  }

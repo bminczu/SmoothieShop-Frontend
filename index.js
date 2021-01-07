@@ -27,13 +27,18 @@ function fetchFavSmoothies(){
 function showIngredient(ingredientData){
     //// BASE///
     if (ingredientData.category == "base"){
-        const baseDiv = document.querySelector(".base")
+    const baseDiv = document.querySelector(".base")
     const header = document.createElement("p")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
+    image.setAttribute("id", ingredientData.id)
+    image.setAttribute("name", ingredientData.name)
     image.src = ingredientData.photo
     baseDiv.append(header, image)
-    }
+    image.addEventListener("click", () => {
+        moveIngredient(image)
+    })}
+    
 
 
     ///// PLANT //////
@@ -44,6 +49,9 @@ function showIngredient(ingredientData){
     const image = document.createElement("img")
     image.src = ingredientData.photo
     plantDiv.append(plantHeader, image)
+    image.addEventListener("click", () => {
+        selectPlantIngredient(image)
+    })
     }
 
         /////// TOPPINGS //////
@@ -55,13 +63,46 @@ function showIngredient(ingredientData){
         const image = document.createElement("img")
         image.src = ingredientData.photo
         toppingsDiv.append(toppingsHeader, image)
+        image.addEventListener("click", () => {
+            selectToppingIngredient(image)
+        })
     }
 
+}
+///////// SELECT BASE /////
+function moveIngredient(image){
+  const ingredientImage = document.querySelector("#ingredient-image")
+  ingredientImage.append(image) //image MOVES to specified div
+  ingredientImage.src = image.src
+   const ingredientDiv= document.querySelector(".ingredient-event")
+   const ingredientDivImg = document.createElement("img")
+
+   ingredientDivImg.src = image.src
+    ingredientDiv.append(ingredientDivImg)
+}
 
 
+////// SELECT PLANT ///////
+function selectPlantIngredient(image){
+    const plantImage = document.querySelector("#ingredient-image")
+    plantImage.append(image) //image MOVES to specified div
+    plantImage.src = image.src
+     const plantIngredientDiv= document.querySelector(".ingredient-event")
+     const plantIngredientImg = document.createElement("img")
+     plantIngredientImg.src = image.src
+     plantIngredientDiv.append(plantIngredientImg)
 
+}
 
-
+////// SELECT TOPPINGS ////
+function selectToppingIngredient(image){
+    const toppingImage = document.querySelector("#ingredient-image")
+    toppingImage.append(image) //image MOVES to specified div
+    toppingImage.src = image.src
+     const toppingIngredientDiv= document.querySelector(".ingredient-event")
+     const toppingIngredientImg = document.createElement("img")
+     toppingIngredientImg.src = image.src
+     toppingIngredientDiv.append(toppingIngredientImg)
 }
 
 
@@ -73,8 +114,8 @@ function showSmoothie(smoothieData){
      const header = document.createElement("p")
      header.innerText = smoothieData.name
      preMadeSmoothieDiv.append(header)
- }
- else {nill}} //// IMAGES DISPLAYED BREAK WHEN THIS IS DELETED. WHEN ACTIVE, 
+ }}
+ //else {nill}} //// IMAGES DISPLAYED BREAK WHEN THIS IS DELETED. WHEN ACTIVE, 
  /// BACKGROUND SIZING CHANGES..///
 
 
@@ -101,18 +142,18 @@ fetch("http://localhost:3000/smoothies", {
 
 
     //////// SIZE BUTTONS ///////
-let smallButton = document.querySelector(".small-box")
-smallButton.addEventListener("click", event => {
-event.preventDefault()
-console.log(event.target)
+// let smallButton = document.querySelector(".small-box")
+// smallButton.addEventListener("click", event => {
+// event.preventDefault()
+// console.log(event.target)
 
-// fetch(`http://localhost:3000/smoothies/${dancerID}`,{
-//         method: "PATCH",
-//         headers: {"Content-Type": "application/json"},
-//         body: JSON.stringify({
-//             likes: likeCount
-//         })
-//     })
-})
+// // fetch(`http://localhost:3000/smoothies/${dancerID}`,{
+// //         method: "PATCH",
+// //         headers: {"Content-Type": "application/json"},
+// //         body: JSON.stringify({
+// //             likes: likeCount
+// //         })
+// //     })
+// })
 
 
