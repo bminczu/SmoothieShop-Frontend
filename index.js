@@ -25,24 +25,57 @@ function fetchFavSmoothies(){
 
 /////// "SHOW" FUNCTIONS
 function showIngredient(ingredientData){
-    const smoothieDiv = document.querySelector(".smoothies")
+    //// BASE///
+    if (ingredientData.category == "base"){
+        const baseDiv = document.querySelector(".base")
     const header = document.createElement("p")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
-    smoothieDiv.append(header, image)
+    baseDiv.append(header, image)
+    }
+
+
+    ///// PLANT //////
+    if (ingredientData.category == "plant"){
+    const plantDiv = document.querySelector(".plant")
+    const plantHeader = document.createElement("p")
+    plantHeader.innerText = ingredientData.name
+    const image = document.createElement("img")
+    image.src = ingredientData.photo
+    plantDiv.append(plantHeader, image)
+    }
+
+        /////// TOPPINGS //////
+    if (ingredientData.category == "toppings"){
+    
+        const toppingsDiv = document.querySelector(".toppings")
+        const toppingsHeader = document.createElement("p")
+        toppingsHeader.innerText = ingredientData.name
+        const image = document.createElement("img")
+        image.src = ingredientData.photo
+        toppingsDiv.append(toppingsHeader, image)
+    }
+
+
+
+
+
+
 }
 
 
 
 ////// FAVORITE SMOOTHIES ///////
 function showSmoothie(smoothieData){
-    if(smoothieData.favorite = true){
+    if(smoothieData.favorite == true){
      const preMadeSmoothieDiv = document.querySelector(".house-favorites")
      const header = document.createElement("p")
      header.innerText = smoothieData.name
      preMadeSmoothieDiv.append(header)
- }}
+ }
+ else {nill}} //// IMAGES DISPLAYED BREAK WHEN THIS IS DELETED. WHEN ACTIVE, 
+ /// BACKGROUND SIZING CHANGES..///
 
 
 ///// CUSTOMER/SMOOTHIE NAME FORM //////
