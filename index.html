@@ -20,11 +20,11 @@
     <link rel="stylesheet" href="index.css">
   </head>
   
+<body>
 
-  <body>
-
-
+<!---------- BACKGROUND IMAGE ---------->
 <section class="banner grid-center">
+
 <!---------- LANDING PAGE ---------->
     <div class="col-6-middle centered hero">
     <h1> Bali Bowls </h1>
@@ -32,6 +32,7 @@
     <a href="#start" class="button "> Order My Smoothie Bowl </a>
   </div>
 </section>
+
 <!--------NAME FORM--------->
 <section id="start" class="banner grid-center">
     <div class="col-6-middle grid-center hero"> 
@@ -91,26 +92,34 @@
 </section>
 
 <!---------- FAVORITES ---------->
-<section id="favorites" class= "banner">
+<section id="favorites" class= "banner centered">
     <div class="col-6 centered hero">
         <h2> Choose A House Favorite </h2>
     </div>
     <div class="house-favorites col-6-middle centered">
     </div>
+    <div class= "smoothie-image"></div>
     <div class="centered">
         <a href="#ingredients" class="button"> Make My Own </a>
     </div>
 </section>
 
-
 <!---------- MAKE YOUR OWN ---------->
 <section id="ingredients" class= "banner" index="make">
-    <div class="col-6 centered hero">
+    <div class="col-6 centered margin1">
         <h2> Choose Your Ingredients </h2>
     </div>
-    <div class="base col-6-middle centered"></div>
-    <div class="plant col-6-middle centered"></div>
-    <div class="toppings col-6-middle centered"></div>
+    <div class="grid hero">
+    <div class="base col-4 centered background"></div>
+    <div class="plant col-4 centered background"></div>
+    <div class="toppings col-4 centered background"></div>
+    </div>
+</section>
+
+<section>
+    <div class= "ingredient-event" >
+    <img id= "ingredient-image">
+    </div>
 </section>
 
 <!---------- THANK YOU ---------->
@@ -120,11 +129,11 @@
         <h3> Your smoothie will be ready in 5-10 minutes </h3>
     </div>
 
-    
-
-<!--  -->
+<!---------- SCRIPTS ---------->
    
-    <script defer type="text/javascript" src="index.js"></script>
-  </body>
+<script defer type="text/javascript" src="index.js"></script>
+</body>
   
 </html>
+
+
