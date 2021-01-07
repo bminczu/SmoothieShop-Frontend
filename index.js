@@ -25,22 +25,40 @@ function fetchFavSmoothies(){
 
 /////// "SHOW" FUNCTIONS
 function showIngredient(ingredientData){
-    if(ingredientData.category == "base"){
-    const baseDiv = document.querySelector(".base")
     const header = document.createElement("p")
     header.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
     baseDiv.append(header, image)
-}}
+    }
 
-function showIngredient(ingredientData){
-    const smoothieDiv = document.querySelector(".plants")
-    const header = document.createElement("p")
-    header.innerText = ingredientData.name
+
+    ///// PLANT //////
+    if (ingredientData.category == "plant"){
+    const plantDiv = document.querySelector(".plant")
+    const plantHeader = document.createElement("p")
+    plantHeader.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
-    smoothieDiv.append(header, image)
+    plantDiv.append(plantHeader, image)
+    }
+
+        /////// TOPPINGS //////
+    if (ingredientData.category == "toppings"){
+    
+        const toppingsDiv = document.querySelector(".toppings")
+        const toppingsHeader = document.createElement("p")
+        toppingsHeader.innerText = ingredientData.name
+        const image = document.createElement("img")
+        image.src = ingredientData.photo
+        toppingsDiv.append(toppingsHeader, image)
+    }
+
+
+
+
+
+
 }
 
 function showIngredient(ingredientData){
@@ -63,12 +81,14 @@ function showIngredient(ingredientData){
 
 ////// FAVORITE SMOOTHIES ///////
 function showSmoothie(smoothieData){
-    if(smoothieData.favorite = true){
+    if(smoothieData.favorite == true){
      const preMadeSmoothieDiv = document.querySelector(".house-favorites")
      const header = document.createElement("p")
      header.innerText = smoothieData.name
      preMadeSmoothieDiv.append(header)
- }}
+ }
+ else {nill}} //// IMAGES DISPLAYED BREAK WHEN THIS IS DELETED. WHEN ACTIVE, 
+ /// BACKGROUND SIZING CHANGES..///
 
 
 ///// CUSTOMER/SMOOTHIE NAME FORM //////
