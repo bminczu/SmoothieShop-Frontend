@@ -102,12 +102,12 @@ function showSmoothie(smoothieData){
      header.innerText = smoothieData.name
      const smoothieImage = document.createElement("img")
      smoothieImage.src = smoothieData.photo
-     preMadeSmoothieDiv.append(header, smoothieImage)
+     preMadeSmoothieDiv.append(smoothieImage, header)
      smoothieImage.addEventListener("click",(e) => {
          selectBowl(smoothieImage, e)
      })
  }}
-function selectBowl(smoothieImage, e){
+ function selectBowl(smoothieImage, e){
     const bowlName = e.target.previousSibling
     bowlName.style.fontWeight = "bolder";
     const bowlImage = document.querySelector("#ingredient-image")
