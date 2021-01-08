@@ -7,7 +7,6 @@
      <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Megrim&family=Vidaloka&display=swap" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-
      <!-- Gridlex -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css"></link>
  
@@ -21,18 +20,15 @@
   </head>
   
 <body>
-
 <!---------- BACKGROUND IMAGE ---------->
 <section class="banner grid-center">
-
 <!---------- LANDING PAGE ---------->
     <div class="col-6-middle centered hero">
     <h1> Bali Bowls </h1>
     <h2 class="not-bold"> A taste of paradise </h2>
-    <a href="#start" class="button "> Order My Smoothie Bowl </a>
+    <a href="#start" class="button "> Create My Smoothie Bowl </a>
   </div>
 </section>
-
 <!--------NAME FORM--------->
 <section id="start" class="banner grid-center">
     <div class="col-6-middle grid-center hero"> 
@@ -44,7 +40,6 @@
     name="comment"
     placeholder="Your name"
   />
-
   <input
   class="comment-input"
   type="text"
@@ -55,14 +50,11 @@
     <button class="submit-button button" type="submit"><a href="#size">Start!</a></button></form>
 </div>
 </section>
-
 <!---------- SIZE ---------->
 <section id="size" class="banner col-6-middle centered">
   <div class="hero">
     <h2> Choose A Size </h2>
-
   <div class="grid padded-1">
-
     <div class="col-4_sm-12 padded-1">
         <h3> Small </h3>
       <a href="#favorites" class="clickable-box bg-image small-box">
@@ -70,7 +62,6 @@
         </div>
       </a>
     </div>
-
     <div class="col-4_sm-12 padded-1">
         <h3> Medium </h3>
       <a href="#favorites" class="clickable-box bg-image medium-box">
@@ -78,7 +69,6 @@
         </div>
       </a>
     </div>
-
     <div class="col-4_sm-12 padded-1">
         <h3> Large </h3>
       <a href="#favorites" class="clickable-box bg-image large-box">
@@ -86,24 +76,29 @@
         </div>
       </a>
     </div>
-
     </div>
   </div>
 </section>
-
 <!---------- FAVORITES ---------->
 <section id="favorites" class= "banner centered">
     <div class="col-6 centered hero">
         <h2> Choose A House Favorite </h2>
     </div>
+    <div class="centered">
+      <a href="#ingredients" class="button"> Make My Own </a>
+  </div>
     <div class="house-favorites col-6-middle centered">
     </div>
     <div class= "smoothie-image"></div>
     <div class="centered">
-        <a href="#ingredients" class="button"> Make My Own </a>
+        <a href="#thankyou" class="button"> Done </a>
     </div>
+    <section>
+      <div class= "smoothie-event" >
+      <img id= "smoothie-image">
+      </div>
+  </section>
 </section>
-
 <!---------- MAKE YOUR OWN ---------->
 <section id="ingredients" class= "banner" index="make">
     <div class="col-6 centered margin1">
@@ -115,26 +110,25 @@
     <div class="toppings col-4 centered background"></div>
     </div>
 </section>
-
 <section>
-    <div class= "ingredient-event" >
-    <img id= "ingredient-image">
-    </div>
-    <a href="#thankyou" class="button"> Make My Own </a>
+<div class= "ingredient-event" >
+<img id= "ingredient-image">
+</div>
+<!-- <a href="#thankyou" class="button centered" > Done </a> -->
+<a  class="button centered" > Done </a>
 </section>
-
 <!---------- THANK YOU ---------->
-<section id="thankyou" class= "banner grid-center" index="make">
+<section id= "thankyou" class= "banner grid-center" index="make">
     <div class="col-6-middle centered hero">
         <h2> Thank you! </h2>
         <h3> Your smoothie will be ready in 5-10 minutes </h3>
     </div>
-
 <!---------- SCRIPTS ---------->
    
 <script defer type="text/javascript" src="index.js"></script>
 </body>
   
 </html>
+
 
 
