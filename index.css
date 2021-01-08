@@ -63,6 +63,11 @@
   p, ul {
      margin-bottom: 0.8rem;
   }
+
+  a {
+      text-decoration: none;
+      color: inherit;
+  }
   /* ------- unique typography styles - adjust to suit your styles  --------- */
 
   .not-bold   { font-weight: normal; } /* add this class to make headings not bold */
@@ -139,12 +144,14 @@
     }
 
 
-  /* Headers and footers */
+  /* Header */
 
   header {
     padding: 2% 5%;
-    background-color: #FFF2F2;
+    background-color: #FFE8E8;
   }
+  /* #D7FFFA */
+  /* #FFF2F2 */
 
   header a,
   footer a,
@@ -170,15 +177,13 @@
     background-repeat: repeat;
     background-position: bottom;
     min-height: 100vh;
-    background-color: #FFEDED;
+    background-color: #FFE8E8;
   }
   .hero {
-    background-color: #FFEDED;
+    background-color: #FFE8E8;
     padding: 44px;
-  }
-
-  .title {
-      background-color: #FFEDED;
+    margin-right: 40px;
+    margin-left: 40px;
   }
 
   /* CLICKABLE BOXES */
@@ -192,10 +197,10 @@
   }
 
   .clickable-box .overlay {
-    min-height:10rem;
+    min-height:15rem;
     padding: 5rem 2rem;
     /* background-color: rgba(0,0,10,0.6); */
-    color: white;
+    color: black;
   }
 
   .clickable-box p {
@@ -210,17 +215,32 @@
   .small-box {
     background-image: url(images/bowl64.png);
     background-repeat: no-repeat;
-    /* background-size: contain; */
+    background-color: #FFE8E8;
+    background-position: center;
   }
   .medium-box {
     background-image: url(images/bowl128.png);
     background-repeat: no-repeat;
+    background-color: #FFE8E8;
+    background-position: center;
   }
   .large-box {
     background-image: url(images/bowl256.png);
     background-repeat: no-repeat;
+    background-color: #FFE8E8;
+    background-position: center;
   }
 
-  div.ingredient-event {                    /* this will hide all divs on the page */
+  /* MAKE SMOOTHIE */
+.background {
+    background-color: #FFE8E8;
+    max-width: 20px;
+}
+.margin1 {
+    margin-bottom: 60px;
+}
+
+/* JS */
+div.ingredient-event {                    /* this will hide all divs on the page */
     display:none;
   }

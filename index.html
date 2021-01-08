@@ -20,20 +20,23 @@
     <link rel="stylesheet" href="index.css">
   </head>
   
+<body>
 
-  <body>
-
-
+<!---------- BACKGROUND IMAGE ---------->
 <section class="banner grid-center">
+
 <!---------- LANDING PAGE ---------->
     <div class="col-6-middle centered hero">
     <h1> Bali Bowls </h1>
     <h2 class="not-bold"> A taste of paradise </h2>
-    <a href="#start" class="button "> Order My Smoothie Bowl </a>
+    <a href="#start" class="button "> Create My Smoothie Bowl </a>
   </div>
 </section>
+
 <!--------NAME FORM--------->
-<section> 
+<section id="start" class="banner grid-center">
+    <div class="col-6-middle grid-center hero"> 
+        <h2> Who is the smoothie for? </h2>
   <form class="name-form" >
   <input
     class="comment-input"
@@ -48,85 +51,101 @@
   name="comment"
   placeholder="Smoothie name"
   />
-
-  <button class="submit-button" type="submit">Start!</button>
-</form></section>
-
-
+<br>
+    <button class="submit-button button" type="submit"><a href="#size">Start!</a></button></form>
+</div>
+</section>
 
 <!---------- SIZE ---------->
-<section index="size"class="banner col-6-middle centered hero">
-  <h2> Choose A Size </h2>
+<section id="size" class="banner col-6-middle centered">
+  <div class="hero">
+    <h2> Choose A Size </h2>
 
   <div class="grid padded-1">
 
     <div class="col-4_sm-12 padded-1">
-      <a href="#" class="clickable-box bg-image small-box">
+        <h3> Small </h3>
+      <a href="#favorites" class="clickable-box bg-image small-box">
         <div class="overlay padded light-text">
-          <h3> Small </h3>
         </div>
       </a>
     </div>
 
     <div class="col-4_sm-12 padded-1">
-      <a href="#" class="clickable-box bg-image medium-box">
+        <h3> Medium </h3>
+      <a href="#favorites" class="clickable-box bg-image medium-box">
         <div class="overlay padded light-text">
-          <h3> Medium </h3>
         </div>
       </a>
     </div>
 
     <div class="col-4_sm-12 padded-1">
-      <a href="#" class="clickable-box bg-image large-box">
+        <h3> Large </h3>
+      <a href="#favorites" class="clickable-box bg-image large-box">
         <div class="overlay padded light-text">
-          <h3> Large </h3>
         </div>
       </a>
     </div>
 
+    </div>
   </div>
-
 </section>
 
 <!---------- FAVORITES ---------->
-<section index="start" class= "banner">
+<section id="favorites" class= "banner centered">
     <div class="col-6 centered hero">
         <h2> Choose A House Favorite </h2>
     </div>
+    <div class="centered">
+      <a href="#ingredients" class="button"> Make My Own </a>
+  </div>
     <div class="house-favorites col-6-middle centered">
     </div>
+    <div class= "smoothie-image"></div>
     <div class="centered">
-        <a href="#" class="button"> Make My Own </a>
+        <a href="#thankyou" class="button"> Done </a>
     </div>
+    <section>
+      <div class= "smoothie-event" >
+      <img id= "smoothie-image">
+      </div>
+  </section>
 </section>
-
 
 <!---------- MAKE YOUR OWN ---------->
-<section class= "banner" index="make">
-    <div class="col-6 centered hero">
+<section id="ingredients" class= "banner" index="make">
+    <div class="col-6 centered margin1">
         <h2> Choose Your Ingredients </h2>
     </div>
-    <div class="base col-6-middle centered"></div>
-    <div class="plant col-6-middle centered"></div>
-    <div class="toppings col-6-middle centered"></div>
+    <div class="grid hero">
+    <div class="base col-4 centered background"></div>
+    <div class="plant col-4 centered background"></div>
+    <div class="toppings col-4 centered background"></div>
+    </div>
 </section>
+
+
 
 <section>
 <div class= "ingredient-event" >
 <img id= "ingredient-image">
 </div>
 
+<!-- <a href="#thankyou" class="button centered" > Done </a> -->
+<a  class="button centered" > Done </a>
 </section>
 <!---------- THANK YOU ---------->
-<section class= "banner grid-center" index="make">
+<section id= "thankyou" class= "banner grid-center" index="make">
     <div class="col-6-middle centered hero">
         <h2> Thank you! </h2>
         <h3> Your smoothie will be ready in 5-10 minutes </h3>
     </div>
 
-<!--  -->
+<!---------- SCRIPTS ---------->
    
-    <script defer type="text/javascript" src="index.js"></script>
-  </body>
+<script defer type="text/javascript" src="index.js"></script>
+</body>
   
 </html>
+
+
