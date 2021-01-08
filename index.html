@@ -40,19 +40,12 @@
     name="comment"
     placeholder="Your name"
   />
-  <input
-  class="comment-input"
-  type="text"
-  name="comment"
-  placeholder="Smoothie name"
-  />
-<br>
     <button class="submit-button button" type="submit"><a href="#size">Start!</a></button></form>
-</div>
+    </div>
 </section>
 <!---------- SIZE ---------->
-<section id="size" class="banner col-6-middle centered">
-  <div class="hero">
+<section id="size" class="banner grid-center">
+  <div class="col-10-middle centered hero">
     <h2> Choose A Size </h2>
   <div class="grid padded-1">
     <div class="col-4_sm-12 padded-1">
@@ -80,17 +73,16 @@
   </div>
 </section>
 <!---------- FAVORITES ---------->
-<section id="favorites" class= "banner centered">
+<section id="favorites" class= "banner">
     <div class="col-6 centered hero">
         <h2> Choose A House Favorite </h2>
     </div>
-    <div class="centered">
-      <a href="#ingredients" class="button"> Make My Own </a>
-  </div>
-    <div class="house-favorites col-6-middle centered">
+    <br>
+    <div class="house-favorites col-6 centered">
     </div>
     <div class= "smoothie-image"></div>
     <div class="centered">
+        <a href="#ingredients" class="button"> Make My Own </a>
         <a href="#thankyou" class="button"> Done </a>
     </div>
     <section>
@@ -101,13 +93,15 @@
 </section>
 <!---------- MAKE YOUR OWN ---------->
 <section id="ingredients" class= "banner" index="make">
-    <div class="col-6 centered margin1">
+    <div class="col-6 centered hero margin1">
         <h2> Choose Your Ingredients </h2>
+        <h3> Pick 1 base, up to 5 plants, & 3 toppings!</h3>
     </div>
     <div class="grid hero">
     <div class="base col-4 centered background"></div>
     <div class="plant col-4 centered background"></div>
     <div class="toppings col-4 centered background"></div>
+    <a href= "#thankyou" class="button last-button" > Done </a>
     </div>
 </section>
 <section>
@@ -115,7 +109,6 @@
 <img id= "ingredient-image">
 </div>
 <!-- <a href="#thankyou" class="button centered" > Done </a> -->
-<a  class="button centered" > Done </a>
 </section>
 <!---------- THANK YOU ---------->
 <section id= "thankyou" class= "banner grid-center" index="make">
