@@ -29,7 +29,7 @@ function showIngredient(ingredientData){
     image.setAttribute("id", ingredientData.id)
     image.setAttribute("name", ingredientData.name)
     image.src = ingredientData.photo
-    baseDiv.append(header, image)
+    baseDiv.append(image, header)
     image.addEventListener("click", () => {
         moveIngredient(image)
     })}
@@ -40,7 +40,7 @@ function showIngredient(ingredientData){
     plantHeader.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
-    plantDiv.append(plantHeader, image)
+    plantDiv.append(image, plantHeader)
     image.addEventListener("click", () => {
         selectPlantIngredient(image)
     })
@@ -52,7 +52,7 @@ function showIngredient(ingredientData){
         toppingsHeader.innerText = ingredientData.name
         const image = document.createElement("img")
         image.src = ingredientData.photo
-        toppingsDiv.append(toppingsHeader, image)
+        toppingsDiv.append(image, toppingsHeader)
         image.addEventListener("click", () => {
             selectToppingIngredient(image)
         })
@@ -92,11 +92,11 @@ function selectToppingIngredient(image){
 function showSmoothie(smoothieData){
     if(smoothieData.favorite == true){
      const preMadeSmoothieDiv = document.querySelector(".house-favorites")
-     const header = document.createElement("p")
-     header.innerText = smoothieData.name
      const smoothieImage = document.createElement("img")
      smoothieImage.src = smoothieData.photo
-     preMadeSmoothieDiv.append(header, smoothieImage)
+     const header = document.createElement("p")
+     header.innerText = smoothieData.name
+     preMadeSmoothieDiv.append(smoothieImage, header)
  }}
  //else {nill}} //// IMAGES DISPLAYED BREAK WHEN THIS IS DELETED. WHEN ACTIVE, 
  /// BACKGROUND SIZING CHANGES..///
