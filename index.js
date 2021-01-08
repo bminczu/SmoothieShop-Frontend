@@ -18,7 +18,7 @@ function fetchFavSmoothies(){
         smoothies.forEach(smoothie => showSmoothie(smoothie))
     })
 }
-/////// "SHOW" FUNCTIONS
+/////// "SHOW" FUNCTION
 function showIngredient(ingredientData){
     //// BASE///
     if (ingredientData.category == "base"){
@@ -29,9 +29,9 @@ function showIngredient(ingredientData){
     image.setAttribute("id", ingredientData.id)
     image.setAttribute("name", ingredientData.name)
     image.src = ingredientData.photo
-    baseDiv.append(header, image)
-    image.addEventListener("click", () => {
-        moveIngredient(image)
+    baseDiv.append(image, header)
+    image.addEventListener("click", (e) => {
+        moveIngredient(image, e)
     })}
     ///// PLANT //////
     if (ingredientData.category == "plant"){
@@ -40,11 +40,12 @@ function showIngredient(ingredientData){
     plantHeader.innerText = ingredientData.name
     const image = document.createElement("img")
     image.src = ingredientData.photo
-    plantDiv.append(plantHeader, image)
-    image.addEventListener("click", () => {
-        selectPlantIngredient(image)
+    plantDiv.append(image, plantHeader)
+    image.addEventListener("click", (e) => {
+        selectPlantIngredient(image, e)
     })
     }
+
         /////// TOPPINGS //////
     if (ingredientData.category == "toppings"){
         const toppingsDiv = document.querySelector(".toppings")
@@ -52,14 +53,18 @@ function showIngredient(ingredientData){
         toppingsHeader.innerText = ingredientData.name
         const image = document.createElement("img")
         image.src = ingredientData.photo
-        toppingsDiv.append(toppingsHeader, image)
-        image.addEventListener("click", () => {
-            selectToppingIngredient(image)
+        toppingsDiv.append(image, toppingsHeader)
+        image.addEventListener("click", (e) => {
+            selectToppingIngredient(image, e)
         })
     }
 }
+
 ///////// SELECT BASE /////
-function moveIngredient(image){
+function moveIngredient(image, e){
+    const ingredientName = e.target.nextSibling
+    ingredientName.style.fontWeight = "bolder";
+
   const ingredientImage = document.querySelector("#ingredient-image")
   ingredientImage.append(image) //image MOVES to specified div
   ingredientImage.src = image.src
@@ -69,7 +74,9 @@ function moveIngredient(image){
     ingredientDiv.append(ingredientDivImg)
 }
 ////// SELECT PLANT ///////
-function selectPlantIngredient(image){
+function selectPlantIngredient(image, e){
+    const plantName = e.target.nextSibling
+    plantName.style.fontWeight = "bolder";
     const plantImage = document.querySelector("#ingredient-image")
     plantImage.append(image) //image MOVES to specified div
     plantImage.src = image.src
@@ -79,7 +86,9 @@ function selectPlantIngredient(image){
      plantIngredientDiv.append(plantIngredientImg)
 }
 ////// SELECT TOPPINGS ////
-function selectToppingIngredient(image){
+function selectToppingIngredient(image, e){
+    const toppingName = e.target.nextSibling
+    toppingName.style.fontWeight = "bolder";
     const toppingImage = document.querySelector("#ingredient-image")
     toppingImage.append(image) //image MOVES to specified div
     toppingImage.src = image.src
@@ -97,16 +106,36 @@ function showSmoothie(smoothieData){
      const smoothieImage = document.createElement("img")
      smoothieImage.src = smoothieData.photo
      preMadeSmoothieDiv.append(header, smoothieImage)
+     smoothieImage.addEventListener("click",(e) => {
+         selectBowl(smoothieImage, e)
+     })
+
  }}
- //else {nill}} //// IMAGES DISPLAYED BREAK WHEN THIS IS DELETED. WHEN ACTIVE, 
- /// BACKGROUND SIZING CHANGES..///
-///// CUSTOMER/SMOOTHIE NAME FORM //////
+
+function selectBowl(smoothieImage, e){
+    const bowlName = e.target.previousSibling
+    bowlName.style.fontWeight = "bolder";
+    const bowlImage = document.querySelector("#ingredient-image")
+    bowlImage.append(smoothieImage) //image MOVES to specified div
+    bowlImage.src = smoothieImage.src
+     const bowlIngredientDiv= document.querySelector(".ingredient-event")
+     const bowlIngredientImg = document.createElement("img")
+     bowlIngredientImg.src = smoothieImage.src
+     bowlIngredientDiv.append(bowlIngredientImg)
+}
+
+
+
+
+
+
+
+ /////NAME FORM /////
 nameForm.addEventListener("submit", event => {
     event.preventDefault()
     let userName = event.target[0].value
     let smoothieName = event.target[1].value
     document.querySelector(".name-form").reset();
-    ///nameForm.dataset.id =  smoothieData.id
 fetch("http://localhost:3000/smoothies", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
