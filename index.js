@@ -45,7 +45,6 @@ function showIngredient(ingredientData){
         selectPlantIngredient(image, e)
     })
     }
-
         /////// TOPPINGS //////
     if (ingredientData.category == "toppings"){
         const toppingsDiv = document.querySelector(".toppings")
@@ -59,12 +58,10 @@ function showIngredient(ingredientData){
         })
     }
 }
-
 ///////// SELECT BASE /////
 function moveIngredient(image, e){
     const ingredientName = e.target.nextSibling
     ingredientName.style.fontWeight = "bolder";
-
   const ingredientImage = document.querySelector("#ingredient-image")
   ingredientImage.append(image) //image MOVES to specified div
   ingredientImage.src = image.src
@@ -109,9 +106,7 @@ function showSmoothie(smoothieData){
      smoothieImage.addEventListener("click",(e) => {
          selectBowl(smoothieImage, e)
      })
-
  }}
-
 function selectBowl(smoothieImage, e){
     const bowlName = e.target.previousSibling
     bowlName.style.fontWeight = "bolder";
@@ -123,13 +118,6 @@ function selectBowl(smoothieImage, e){
      bowlIngredientImg.src = smoothieImage.src
      bowlIngredientDiv.append(bowlIngredientImg)
 }
-
-
-
-
-
-
-
  /////NAME FORM /////
 nameForm.addEventListener("submit", event => {
     event.preventDefault()
