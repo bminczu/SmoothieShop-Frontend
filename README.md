@@ -4,7 +4,7 @@ Users are guided through the ordering process beginning with providing a name fo
 
 To Start:
 
-Make sure you are CD'd into the correct repo (backend and frontend)
-In backend, run rails 'bundle install', 'rails db:migrate', then 'rails db:seed' and 'rails s'
+Make sure you are CD'd into the correct repo (backend - https://github.com/bminczu/SmoothieShop-Backendand & frontend)
+In backend, run 'bundle install', 'rails db:migrate', then 'rails db:seed' and 'rails s.
 In the frontend, run open index.html.
 
