@@ -63,7 +63,7 @@ function moveIngredient(image, e){
     const ingredientName = e.target.nextSibling
     ingredientName.style.fontWeight = "bolder";
   const ingredientImage = document.querySelector("#ingredient-image")
-  ingredientImage.append(image) //image MOVES to specified div
+  ingredientImage.append(image) 
   ingredientImage.src = image.src
    const ingredientDiv= document.querySelector(".ingredient-event")
    const ingredientDivImg = document.createElement("img")
@@ -75,7 +75,7 @@ function selectPlantIngredient(image, e){
     const plantName = e.target.nextSibling
     plantName.style.fontWeight = "bolder";
     const plantImage = document.querySelector("#ingredient-image")
-    plantImage.append(image) //image MOVES to specified div
+    plantImage.append(image) 
     plantImage.src = image.src
      const plantIngredientDiv= document.querySelector(".ingredient-event")
      const plantIngredientImg = document.createElement("img")
@@ -87,7 +87,7 @@ function selectToppingIngredient(image, e){
     const toppingName = e.target.nextSibling
     toppingName.style.fontWeight = "bolder";
     const toppingImage = document.querySelector("#ingredient-image")
-    toppingImage.append(image) //image MOVES to specified div
+    toppingImage.append(image)
     toppingImage.src = image.src
      const toppingIngredientDiv= document.querySelector(".ingredient-event")
      const toppingIngredientImg = document.createElement("img")
@@ -111,7 +111,7 @@ function selectBowl(smoothieImage, e){
     const bowlName = e.target.previousSibling
     bowlName.style.fontWeight = "bolder";
     const bowlImage = document.querySelector("#ingredient-image")
-    bowlImage.append(smoothieImage) //image MOVES to specified div
+    bowlImage.append(smoothieImage)
     bowlImage.src = smoothieImage.src
      const bowlIngredientDiv= document.querySelector(".ingredient-event")
      const bowlIngredientImg = document.createElement("img")
@@ -134,19 +134,7 @@ fetch("http://localhost:3000/smoothies", {
         }})
     })
 })
-    //////// SIZE BUTTONS ///////
-// let smallButton = document.querySelector(".small-box")
-// smallButton.addEventListener("click", event => {
-// event.preventDefault()
-// console.log(event.target)
-// fetch(`http://localhost:3000/smoothies/${dancerID}`,{
-//         method: "PATCH",
-//         headers: {"Content-Type": "application/json"},
-//         body: JSON.stringify({
-//             likes: likeCount
-//         })
-//     })
-// })
+    
 
 
 
